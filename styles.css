@@ -1,0 +1,22 @@
+.site-wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.patch {
+    background-color: lightgrey;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin: 2rem;
+}
+
+.cat {
+    width: 10rem;
+    margin: 1rem;
+}
