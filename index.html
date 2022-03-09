@@ -10,14 +10,48 @@
     </head>
     <body>
         <div class="site-wrapper">
-            <h1>Catch Oscar!</h1>
-            <p>Oscar the grey cat ran away with your bag of treats! Catch him before he finds a place to hide them away forever. Only thing is, he ran
+            <section id="splash-screen">
+
+                <header>
+                <h1>Catch Oscar!</h1>
+                <p>Oscar the grey cat ran away with your bag of treats! Catch him before he finds a place to hide them away forever. Only thing is, he ran
                 into a colony of cats minding their own business. You must only catch Oscar and not disturb the others. Can you keep up with Oscar? Good luck!</p>
-            <p>comment</p>
+                </header>
 
-            <button>Start Game</button>
+                <h2 id="player-name"></h2>
+                <input id="name-input" type="text">
+                <input id="add-name" type="button" value="add player name">
 
-            <section id="container" class="container">
+                <input id="play-game" type="button" value="play game">
+            </section>
+            <section>
+
+                <input id="start-game" type="button" value="start game">
+                
+                <div class="player-display">
+                    <h2 id="player-name"></h2>
+                    <h2 id="score"></h2>
+                </div>
+
+            
+
+                <section id="game-container" class="game-container">
+
+                <article class="patch">
+                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
+                </article>
+
+                <article class="patch">
+                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
+                </article>
+
+                <article class="patch">
+                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
+                </article>
+
+                <article class="patch">
+                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
+                </article>
 
                 <article class="patch">
                     <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
@@ -39,22 +73,16 @@
                     <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
                 </article>
 
-                <article class="patch">
-                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
-                </article>
+                </section>
+            </section>
 
-                <article class="patch">
-                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
-                </article>
+            <section id="gameover-screen">
+                <div class="final-player-display">
+                    <h2 id="player-name"></h2>
+                    <h2 id="score"></h2>
+                </div>
 
-                <article class="patch">
-                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
-                </article>
-
-                <article class="patch">
-                    <img src="./media//images/orange-cat.svg" alt="a cartoon cat" class="cat">
-                </article>
-
+                <input id="reset-game" type="button" value="reset game">
             </section>
         </div>
 

@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-.container {
+.game-container {
     display: flex;
     flex-wrap: wrap;
 }
