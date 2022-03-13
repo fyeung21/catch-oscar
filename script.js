@@ -1,6 +1,6 @@
 "use strict";
 
-const oscarGame = {
+const catchGame = {
     isRunning: false,
     splashScreen: $('#splash-screen'),
     gameScreen: $(''),
@@ -16,7 +16,26 @@ const oscarGame = {
     patch: $('patch'),
     cat: $('cat'),
     restartBtn: $('#reset-game'),
-    
+    setup: () => {
+
+        catchGame.playBtn.on('click', event => {
+            game.playGame();
+        });
+
+        catchGame.startBtn.on('click', event => {
+            game.startGame();
+        });
 
     
+        catchGame.pauseBtn.on('click', event => {
+            game.pauseGame();
+        });
+
+    },
+
+
 }
+
+$(() => {
+    game.setup();
+});
