@@ -35,10 +35,34 @@ const reactionGame = {
     randomTime: (min, max) => {
         Math.round(Math.random()*(max-min)+min);
     },
+    lastHole: $(),
+    randomHole: () => {
+        const index = Math.floor(Math.random()*reactionGame.hole.length);
+        const hole = reactionGame.hole[index];
+
+        if (hole === reactionGame.lastHole) {
+            reactionGame.randHole(holes)
+
+        } else if (reactionGame.lastHole != hole) {
+            reactionGame.lastHole = hole
+            reactionGame.hole.removeClass('active')
+            $('.cat').remove()
+            
+            const randCat = reactionGame.imgSrc[Math.floor(Math.random()*reactionGame.imgSrc.length)];
+            let img = `<img class='cat ${randCat.split('.')[0]}' src='./media/images/${randCat}' alt='${randCat}'/>`;
+            
+            $(hole).addClass('active')
+            $(hole).html(img)
+
+        } else {
+            alert("error");
+        }
+
+    },
 
 
 }
 
 $(() => {
-    catchGame.setup();
+    reactionGame.setup();
 });
