@@ -36,11 +36,16 @@ const reactionGame = {
 
             if ($(event.currentTarget).children().first().hasClass('oscar')) {
                 reactionGame.score++
-                $('.cat').remove()
+                $('.cat').remove();
 
             } else {
-                reactionGame.score--
-                $('.cat').remove()
+                $('.cat').remove();
+
+                if(reactionGame.score === 0) {
+                    reactionGame.score
+                } else {
+                    reactionGame.score--
+                }
             }
 
         });
