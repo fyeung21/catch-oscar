@@ -15,7 +15,7 @@ const reactionGame = {
     pauseBtn: $(''),
     hole: $('.hole'),
     cat: $('.cat'),
-    imgSrc: ["orange-cat.svg", "angy-orangecat.svg", "grey-cat.svg"],
+    imgSrc: ["orange-cat.svg", "angy-orangecat.svg", "oscar.svg"],
     score: 0,
     restartBtn: $('#reset-game'),
     setup: () => {
@@ -34,7 +34,7 @@ const reactionGame = {
 
         reactionGame.hole.on('click', event => {
 
-            if ($(event.currentTarget).children().first().hasClass('grey-cat')) {
+            if ($(event.currentTarget).children().first().hasClass('oscar')) {
                 reactionGame.score++
                 $('.cat').remove()
 
@@ -54,7 +54,7 @@ const reactionGame = {
         const hole = reactionGame.hole[index];
 
         if (hole === reactionGame.lastHole) {
-            reactionGame.randHole(holes)
+            reactionGame.randomHole(hole)
 
         } else if (reactionGame.lastHole != hole) {
             reactionGame.lastHole = hole
