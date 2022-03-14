@@ -31,6 +31,19 @@ const reactionGame = {
         reactionGame.pauseBtn.on('click', event => {
             reactionGame.pauseGame();
         });
+
+        reactionGame.hole.on('click', event => {
+
+            if ($(event.currentTarget).children().first().hasClass('grey-cat')) {
+                reactionGame.score++
+                $('.cat').remove()
+
+            } else {
+                reactionGame.score--
+                $('.cat').remove()
+            }
+
+        });
     },
     randomTime: (min, max) => {
         Math.round(Math.random()*(max-min)+min);
