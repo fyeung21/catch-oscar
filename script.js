@@ -32,6 +32,9 @@ const reactionGame = {
             reactionGame.pauseGame();
         });
     },
+    randomTime: (min, max) => {
+        Math.round(Math.random()*(max-min)+min);
+    },
 
 
 }
