@@ -1,6 +1,6 @@
 "use strict";
 
-const catchGame = {
+const reactionGame = {
     isRunning: false,
     splashScreen: $('#splash-screen'),
     gameScreen: $(''),
@@ -9,33 +9,33 @@ const catchGame = {
     addNameBtn: $('#add-name'),
     playerDisplay: $('#player-display'),
     playerName: $('#player-name'),
-    score: $('#score'),
+    scoreDisplay: $('#score'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
     pauseBtn: $(''),
-    patch: $('patch'),
-    cat: $('cat'),
+    hole: $('.hole'),
+    cat: $('.cat'),
+    imgSrc: ["orange-cat.svg", "angy-orangecat.svg", "grey-cat.svg"],
+    score: 0,
     restartBtn: $('#reset-game'),
     setup: () => {
-
-        catchGame.playBtn.on('click', event => {
-            game.playGame();
+        
+        reactionGame.playBtn.on('click', event => {
+            reactionGame.playGame();
         });
-
-        catchGame.startBtn.on('click', event => {
-            game.startGame();
+        
+        reactionGame.startBtn.on('click', event => {
+            reactionGame.startGame();
         });
-
-    
-        catchGame.pauseBtn.on('click', event => {
-            game.pauseGame();
+        
+        reactionGame.pauseBtn.on('click', event => {
+            reactionGame.pauseGame();
         });
-
     },
 
 
 }
 
 $(() => {
-    game.setup();
+    catchGame.setup();
 });
