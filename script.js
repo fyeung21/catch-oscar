@@ -58,6 +58,16 @@ const reactionGame = {
     randomHole: () => {
         const index = Math.floor(Math.random()*reactionGame.hole.length);
         const hole = reactionGame.hole[index];
+
+        if ($('[src$="oscar.svg"]').length) {
+            reactionGame.escapedOscars++
+
+            if (reactionGame.escapedOscars >= 3) {
+                alert('oscar escaped!')
+                return
+            }
+        }
+
         reactionGame.peep();
 
         if (hole === reactionGame.lastHole) {
@@ -79,6 +89,7 @@ const reactionGame = {
         }
 
     },
+    escapedOscars: 0,
     round: 0,
     timeoutId: null,
     peep: () => {
