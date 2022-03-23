@@ -15,7 +15,7 @@ const reactionGame = {
     pauseBtn: $(''),
     hole: $('.hole'),
     cat: $('.cat'),
-    imgSrc: ["orange-cat.svg", "angy-orangecat.svg", "oscar.svg"],
+    imgSrc: ["orange-cat.svg", "oscar.svg", "angy-orangecat.svg", "oscar.svg"],
     score: 0,
     restartBtn: $('#reset-game'),
     setup: () => {
@@ -37,6 +37,7 @@ const reactionGame = {
             if ($(event.currentTarget).children().first().hasClass('oscar')) {
                 reactionGame.score++
                 $('.cat').remove();
+                $('oscar').remove();
 
             } else {
                 $('.cat').remove();
@@ -57,6 +58,7 @@ const reactionGame = {
     randomHole: () => {
         const index = Math.floor(Math.random()*reactionGame.hole.length);
         const hole = reactionGame.hole[index];
+        reactionGame.peep();
 
         if (hole === reactionGame.lastHole) {
             reactionGame.randomHole(hole)
@@ -77,8 +79,31 @@ const reactionGame = {
         }
 
     },
+    round: 0,
+    timeoutId: null,
+    peep: () => {
+        reactionGame.round++
 
+            if (reactionGame.round <= 5) {
+                window.clearTimeout(reactionGame.timeoutId)
+                reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 3000);
+                
+            } else if (reactionGame.round <= 30) {
+                window.clearTimeout(reactionGame.timeoutId)
+                reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 2000)
 
+            } else if (reactionGame.round <= 60) {
+                window.clearTimeout(reactionGame.timeoutId)
+                reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 1000)
+
+            } else if (reactionGame.round <= 100) {
+                window.clearTimeout(reactionGame.timeoutId)
+                reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 800)
+
+            } else {
+                return
+            }        
+    }
 }
 
 $(() => {
