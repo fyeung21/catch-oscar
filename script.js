@@ -7,7 +7,6 @@ const reactionGame = {
     gameoverScreen: $('#gameover-screen'),
     nameInput: $('#name-input'),
     addNameBtn: $('#add-name'),
-    // playerDisplay: $('#player-display'),
     playerNameDisplay: $('.player-name'),
     scoreDisplay: $('#score'),
     playBtn: $('#play-game'),
@@ -29,9 +28,18 @@ const reactionGame = {
         reactionGame.startBtn.on('click', event => {
             reactionGame.startGame();
         });
-        
+
         reactionGame.pauseBtn.on('click', event => {
             reactionGame.pauseGame();
+        });
+
+        reactionGame.resetBtn.on('click', event => {
+            reactionGame.switchScreen('splash-screen');
+        });
+        reactionGame.addNameBtn.on('click', event => {
+            reactionGame.addName();
+            reactionGame.updatePlayerName();
+            reactionGame.nameInput.val("");
         });
 
         reactionGame.hole.on('click', event => {
@@ -67,6 +75,16 @@ const reactionGame = {
             reactionGame.gameoverScreen.hide();
             reactionGame.splashScreen.show();
         }
+    },
+    addName: () => {
+        if (reactionGame.nameInput.val().length > 0) {
+            reactionGame.playerName = reactionGame.nameInput.val();
+        } else {
+            alert('please input your name!');
+        }
+    },
+    updatePlayerName: () => {
+        reactionGame.playerNameDisplay.text(reactionGame.playerName);
     },
     randomTime: (min, max) => {
         Math.round(Math.random()*(max-min)+min);
