@@ -10,26 +10,25 @@
     </head>
     <body>
         <div class="site-wrapper">
-            <section id="splash-screen">
-
+            <section class="splash-screen" id="splash-screen">
                 <header>
                 <h1>Catch Oscar!</h1>
                 <p>Oscar the grey cat ran away with your bag of treats! Catch him before he finds a place to hide them away forever. Only thing is, he ran
                 into a colony of cats minding their own business. You must only catch Oscar and not disturb the others. Can you keep up with Oscar? Good luck!</p>
                 </header>
 
-                <h2 id="player-name"></h2>
-                <input id="name-input" type="text">
-                <input id="add-name" type="button" value="add player name">
+                <h2 class="player-name"></h2>
+                <input id="name-input" type="text" placeholder="enter your name">
+                <input id="add-name" type="button" value="submit">
 
                 <input id="play-game" type="button" value="play game">
             </section>
-            <section>
+            <section class="game-screen" id="game-screen">
 
                 <input id="start-game" type="button" value="start game">
                 
                 <div class="player-display">
-                    <h2 id="player-name"></h2>
+                    <h2 class="player-name"></h2>
                     <h2 id="score"></h2>
                 </div>
 
@@ -48,7 +47,7 @@
                 </section>
             </section>
 
-            <section id="gameover-screen">
+            <section class="gameover-screen" id="gameover-screen">
                 <div class="final-player-display">
                     <h2 id="player-name"></h2>
                     <h2 id="score"></h2>

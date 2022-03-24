@@ -3,25 +3,27 @@
 const reactionGame = {
     isRunning: false,
     splashScreen: $('#splash-screen'),
-    gameScreen: $(''),
+    gameScreen: $('#game-screen'),
     gameoverScreen: $('#gameover-screen'),
     nameInput: $('#name-input'),
     addNameBtn: $('#add-name'),
-    playerDisplay: $('#player-display'),
-    playerName: $('#player-name'),
+    // playerDisplay: $('#player-display'),
+    playerNameDisplay: $('.player-name'),
     scoreDisplay: $('#score'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
     pauseBtn: $(''),
+    resetBtn: $('#reset-game'),
     hole: $('.hole'),
     cat: $('.cat'),
     imgSrc: ["orange-cat.svg", "oscar.svg", "angy-orangecat.svg", "oscar.svg"],
     score: 0,
-    restartBtn: $('#reset-game'),
+    playerName: "",
+
     setup: () => {
         
         reactionGame.playBtn.on('click', event => {
-            reactionGame.playGame();
+            reactionGame.switchScreen("play-game");
         });
         
         reactionGame.startBtn.on('click', event => {
@@ -50,6 +52,21 @@ const reactionGame = {
             }
 
         });
+    },
+    switchScreen: (currentScreen) => {
+        if (currentScreen === "play-game") {
+            reactionGame.splashScreen.hide();
+            reactionGame.gameoverScreen.hide();
+            reactionGame.gameScreen.show();
+        } else if (currentScreen === "game-over") {
+            reactionGame.splashScreen.hide();
+            reactionGame.gameScreen.hide();
+            reactionGame.gameoverScreen.show();
+        } else {
+            reactionGame.gameScreen.hide();
+            reactionGame.gameoverScreen.hide();
+            reactionGame.splashScreen.show();
+        }
     },
     randomTime: (min, max) => {
         Math.round(Math.random()*(max-min)+min);
