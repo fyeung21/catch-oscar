@@ -5,13 +5,14 @@ const reactionGame = {
     splashScreen: $('#splash-screen'),
     gameScreen: $('#game-screen'),
     gameoverScreen: $('#gameover-screen'),
+    winScreen: $('#win-screen'),
     nameInput: $('#name-input'),
     addNameBtn: $('#add-name'),
     playerNameDisplay: $('.player-name'),
     scoreDisplay: $('.score'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
-    resetBtn: $('#reset-game'),
+    resetBtn: $('.reset-game'),
     hole: $('.hole'),
     cat: $('.cat'),
     imgSrc: ["orange-cat.svg", "oscar.svg", "angy-orangecat.svg", "oscar.svg"],
@@ -65,14 +66,17 @@ const reactionGame = {
         if (currentScreen === "play-game") {
             reactionGame.splashScreen.hide();
             reactionGame.gameoverScreen.hide();
+            reactionGame.winScreen.hide();
             reactionGame.gameScreen.show();
         } else if (currentScreen === "game-over") {
             reactionGame.splashScreen.hide();
             reactionGame.gameScreen.hide();
+            reactionGame.winScreen.hide();
             reactionGame.gameoverScreen.show();
         } else {
             reactionGame.gameScreen.hide();
             reactionGame.gameoverScreen.hide();
+            reactionGame.winScreen.hide();
             reactionGame.splashScreen.show();
         }
     },
@@ -145,13 +149,12 @@ const reactionGame = {
                 window.clearTimeout(reactionGame.timeoutId)
                 reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 1000)
 
-            } else if (reactionGame.round <= 100) {
-                window.clearTimeout(reactionGame.timeoutId)
-                reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 800)
-
+            } else if (reactionGame.round === 61) {
+                reactionGame.winScreen.show();
+                reactionGame.gameScreen.hide();
             } else {
-                return
-            }        
+                alert("Error! Sorry, please refresh page");
+            }       
     }
 }
 
