@@ -11,7 +11,6 @@ const reactionGame = {
     scoreDisplay: $('.score'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
-    pauseBtn: $(''),
     resetBtn: $('#reset-game'),
     hole: $('.hole'),
     cat: $('.cat'),
@@ -27,10 +26,6 @@ const reactionGame = {
         
         reactionGame.startBtn.on('click', event => {
             reactionGame.startGame();
-        });
-
-        reactionGame.pauseBtn.on('click', event => {
-            reactionGame.pauseGame();
         });
 
         reactionGame.resetBtn.on('click', event => {
