@@ -30,6 +30,10 @@ const reactionGame = {
 
         reactionGame.resetBtn.on('click', event => {
             reactionGame.switchScreen('splash-screen');
+            reactionGame.score = 0;
+            reactionGame.round = 0;
+            reactionGame.escapedOscars = 0;
+            reactionGame.timeoutId = null;
         });
         reactionGame.addNameBtn.on('click', event => {
             reactionGame.addName();
