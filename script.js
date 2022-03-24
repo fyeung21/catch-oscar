@@ -30,7 +30,8 @@ const reactionGame = {
         });
         
         reactionGame.startBtn.on('click', event => {
-            reactionGame.startGame();
+            reactionGame.isRunning = true;
+            reactionGame.peep();
         });
 
         reactionGame.resetBtn.on('click', event => {
@@ -139,7 +140,9 @@ const reactionGame = {
     round: 0,
     timeoutId: null,
     peep: () => {
-        reactionGame.round++
+
+        if (reactionGame.isRunning == true) {
+            reactionGame.round++
 
             if (reactionGame.round <= 5) {
                 window.clearTimeout(reactionGame.timeoutId)
@@ -156,9 +159,15 @@ const reactionGame = {
             } else if (reactionGame.round === 61) {
                 reactionGame.winScreen.show();
                 reactionGame.gameScreen.hide();
+                reactionGame.isRunning = false;
             } else {
                 alert("Error! Sorry, please refresh page");
-            }       
+            }  
+
+        } else {
+            alert("Error! Sorry, please refresh page");
+        }
+               
     }
 }
 
