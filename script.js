@@ -36,6 +36,8 @@ const reactionGame = {
 
         reactionGame.resetBtn.on('click', event => {
             reactionGame.switchScreen('splash-screen');
+            $('.cat').remove();
+            $('oscar').remove();
             reactionGame.score = 0;
             reactionGame.round = 0;
             reactionGame.escapedOscars = 0;
