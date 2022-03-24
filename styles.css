@@ -29,7 +29,7 @@
     display: none;
 }
 .gameover-screen {
-    display: none;
+    /* display: none; */
     background-color: lightseagreen;
     height: 400px;
 }

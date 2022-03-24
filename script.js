@@ -8,7 +8,7 @@ const reactionGame = {
     nameInput: $('#name-input'),
     addNameBtn: $('#add-name'),
     playerNameDisplay: $('.player-name'),
-    scoreDisplay: $('#score'),
+    scoreDisplay: $('.score'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
     pauseBtn: $(''),
@@ -46,6 +46,7 @@ const reactionGame = {
 
             if ($(event.currentTarget).children().first().hasClass('oscar')) {
                 reactionGame.score++
+                reactionGame.updateScoreDisplay();
                 $('.cat').remove();
                 $('oscar').remove();
 
@@ -85,6 +86,9 @@ const reactionGame = {
     },
     updatePlayerName: () => {
         reactionGame.playerNameDisplay.text(reactionGame.playerName);
+    },
+    updateScoreDisplay: () => {
+        reactionGame.scoreDisplay.text(reactionGame.score);
     },
     randomTime: (min, max) => {
         Math.round(Math.random()*(max-min)+min);
