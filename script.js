@@ -22,7 +22,11 @@ const reactionGame = {
     setup: () => {
         
         reactionGame.playBtn.on('click', event => {
-            reactionGame.switchScreen("play-game");
+            if (reactionGame.playerName !== "") {
+                reactionGame.switchScreen("play-game");
+            } else {
+                alert("Please input a name.");
+            }
         });
         
         reactionGame.startBtn.on('click', event => {
