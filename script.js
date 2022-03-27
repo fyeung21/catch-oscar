@@ -19,6 +19,7 @@ const reactionGame = {
     imgSrc: ["orange-cat.svg", "oscar.svg", "angy-orangecat.svg", "oscar.svg"],
     score: 0,
     playerName: "",
+    escapedOscarsDisplay: $('#escapedOscars-display'),
 
     setup: () => {
         
@@ -119,6 +120,9 @@ const reactionGame = {
     updateScoreDisplay: () => {
         reactionGame.scoreDisplay.text(reactionGame.score);
     },
+    updateEscapedOscarsDisplay: () => {
+        reactionGame.escapedOscarsDisplay.text(reactionGame.escapedOscars);
+    },
     lastHole: $(),
     randomHole: () => {
         const index = Math.floor(Math.random()*reactionGame.hole.length);
@@ -126,9 +130,9 @@ const reactionGame = {
 
         if ($('[src$="oscar.svg"]').length) {
             reactionGame.escapedOscars++
+            reactionGame.updateEscapedOscarsDisplay();
 
-            if (reactionGame.escapedOscars >= 3) {
-                // alert('oscar escaped!');
+            if (reactionGame.escapedOscars >= 4) {
                 reactionGame.isRunning = false;
                 reactionGame.gameScreen.hide();
                 reactionGame.gameoverScreen.show();
@@ -152,7 +156,6 @@ const reactionGame = {
             $(hole).html(img)
 
         } else {
-            alert("error");
             reactionGame.isRunning = false;
         }
 
