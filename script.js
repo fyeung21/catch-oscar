@@ -12,7 +12,7 @@ const reactionGame = {
     scoreDisplay: $('.score'),
     escapedOscarsDisplay: $('#escapedOscars-display'),
     playBtn: $('#play-game'),
-    startBtn:$('#start-game'),
+    startBtn: $('#start-game'),
     pauseBtn: $('#pause-game'),
     resetBtn: $('.reset-game'),
     message: $('#message'),
@@ -23,7 +23,7 @@ const reactionGame = {
     playerName: "",
 
     setup: () => {
-        
+
         reactionGame.playBtn.on('click', event => {
             if (reactionGame.playerName !== "") {
                 reactionGame.switchScreen("play-game");
@@ -40,7 +40,7 @@ const reactionGame = {
 
             }
         });
-        
+
         reactionGame.startBtn.on('click', event => {
             reactionGame.isRunning = true;
             reactionGame.peep();
@@ -63,6 +63,9 @@ const reactionGame = {
         });
 
         reactionGame.addNameBtn.on('click', event => {
+            if (reactionGame.nameInput.val().length > 0) {
+                reactionGame.message.remove();
+            }
             reactionGame.addName();
             reactionGame.updatePlayerName();
             reactionGame.nameInput.val("");
@@ -79,7 +82,7 @@ const reactionGame = {
             } else {
                 $('.cat').remove();
 
-                if(reactionGame.score === 0) {
+                if (reactionGame.score === 0) {
                     reactionGame.score
 
                 } else {
@@ -126,7 +129,7 @@ const reactionGame = {
     },
     lastHole: $(),
     randomHole: () => {
-        const index = Math.floor(Math.random()*reactionGame.hole.length);
+        const index = Math.floor(Math.random() * reactionGame.hole.length);
         const hole = reactionGame.hole[index];
 
         if ($('[src$="oscar.svg"]').length) {
@@ -149,10 +152,10 @@ const reactionGame = {
             reactionGame.lastHole = hole
             reactionGame.hole.removeClass('active')
             $('.cat').remove()
-            
-            const randCat = reactionGame.imgSrc[Math.floor(Math.random()*reactionGame.imgSrc.length)];
+
+            const randCat = reactionGame.imgSrc[Math.floor(Math.random() * reactionGame.imgSrc.length)];
             let img = `<img class='cat ${randCat.split('.')[0]}' src='./media/images/${randCat}' alt='${randCat}'/>`;
-            
+
             $(hole).addClass('active')
             $(hole).html(img)
 
@@ -172,7 +175,7 @@ const reactionGame = {
             if (reactionGame.round <= 5) {
                 window.clearTimeout(reactionGame.timeoutId)
                 reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 3000);
-                
+
             } else if (reactionGame.round <= 20) {
                 window.clearTimeout(reactionGame.timeoutId)
                 reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 2000)
@@ -188,12 +191,12 @@ const reactionGame = {
 
             } else {
                 alert("maximum rounds met");
-            }  
+            }
 
         } else {
             reactionGame.isRunning = false;
         }
-               
+
     }
 }
 
