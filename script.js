@@ -38,10 +38,12 @@ const reactionGame = {
             reactionGame.switchScreen('splash-screen');
             $('.cat').remove();
             $('oscar').remove();
+            reactionGame.isRunning = false;
             reactionGame.score = 0;
             reactionGame.round = 0;
             reactionGame.escapedOscars = 0;
             reactionGame.timeoutId = null;
+            reactionGame.scoreDisplay = 0;
         });
         reactionGame.addNameBtn.on('click', event => {
             reactionGame.addName();
@@ -112,8 +114,10 @@ const reactionGame = {
             reactionGame.escapedOscars++
 
             if (reactionGame.escapedOscars >= 3) {
-                alert('oscar escaped!')
-                return
+                // alert('oscar escaped!');
+                reactionGame.isRunning = false;
+                reactionGame.gameScreen.hide();
+                reactionGame.gameoverScreen.show();
             }
         }
 
@@ -135,6 +139,7 @@ const reactionGame = {
 
         } else {
             alert("error");
+            reactionGame.isRunning = false;
         }
 
     },
@@ -150,24 +155,25 @@ const reactionGame = {
                 window.clearTimeout(reactionGame.timeoutId)
                 reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 3000);
                 
-            } else if (reactionGame.round <= 30) {
+            } else if (reactionGame.round <= 20) {
                 window.clearTimeout(reactionGame.timeoutId)
                 reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 2000)
 
-            } else if (reactionGame.round <= 60) {
+            } else if (reactionGame.round <= 30) {
                 window.clearTimeout(reactionGame.timeoutId)
                 reactionGame.timeoutId = window.setTimeout(reactionGame.randomHole, 1000)
 
-            } else if (reactionGame.round === 61) {
+            } else if (reactionGame.round === 31) {
+                reactionGame.isRunning = false;
                 reactionGame.winScreen.show();
                 reactionGame.gameScreen.hide();
-                reactionGame.isRunning = false;
+
             } else {
-                alert("Error! Sorry, please refresh page");
+                alert("maximum rounds met");
             }  
 
         } else {
-            alert("Error! Sorry, please refresh page");
+            reactionGame.isRunning = false;
         }
                
     }
