@@ -59,7 +59,7 @@ const reactionGame = {
             reactionGame.timeoutId = null;
             reactionGame.scoreDisplay = 0;
         });
-        
+
         reactionGame.addNameBtn.on('click', event => {
             reactionGame.addName();
             reactionGame.updatePlayerName();
@@ -79,8 +79,10 @@ const reactionGame = {
 
                 if(reactionGame.score === 0) {
                     reactionGame.score
+
                 } else {
                     reactionGame.score--
+                    reactionGame.updateScoreDisplay();
                 }
             }
 
