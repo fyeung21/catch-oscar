@@ -12,6 +12,7 @@ const reactionGame = {
     scoreDisplay: $('.score'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
+    pauseBtn: $('#pause-game'),
     resetBtn: $('.reset-game'),
     hole: $('.hole'),
     cat: $('.cat'),
@@ -28,14 +29,27 @@ const reactionGame = {
                 alert("Please input a name.");
             }
         });
+
+        reactionGame.pauseBtn.on('click', event => {
+            if (reactionGame.isRunning == true) {
+                reactionGame.isRunning = false;
+                reactionGame.pauseBtn.hide();
+                reactionGame.startBtn.show();
+
+            }
+        });
         
         reactionGame.startBtn.on('click', event => {
             reactionGame.isRunning = true;
             reactionGame.peep();
+            reactionGame.startBtn.hide();
+            reactionGame.pauseBtn.show();
         });
 
         reactionGame.resetBtn.on('click', event => {
             reactionGame.switchScreen('splash-screen');
+            reactionGame.pauseBtn.hide();
+            reactionGame.startBtn.show();
             $('.cat').remove();
             $('oscar').remove();
             reactionGame.isRunning = false;
@@ -45,6 +59,7 @@ const reactionGame = {
             reactionGame.timeoutId = null;
             reactionGame.scoreDisplay = 0;
         });
+        
         reactionGame.addNameBtn.on('click', event => {
             reactionGame.addName();
             reactionGame.updatePlayerName();
