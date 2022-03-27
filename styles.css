@@ -1,3 +1,24 @@
+:root {
+
+    --main-color: lightblue;
+    --second-color: lightpink;
+
+    --font-family-body: "Comic Neue", Helvetica, Arial, san-serif;
+    --font-size-body: 1rem;
+    --font-size-heading: 1.5rem;
+
+
+}
+
+body {
+    background-color: beige;
+    margin: 0 auto;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
 .site-wrapper {
     width: 800px;
     margin: 0 auto;
