@@ -10,16 +10,17 @@ const reactionGame = {
     addNameBtn: $('#add-name'),
     playerNameDisplay: $('.player-name'),
     scoreDisplay: $('.score'),
+    escapedOscarsDisplay: $('#escapedOscars-display'),
     playBtn: $('#play-game'),
     startBtn:$('#start-game'),
     pauseBtn: $('#pause-game'),
     resetBtn: $('.reset-game'),
+    message: $('#message'),
     hole: $('.hole'),
     cat: $('.cat'),
     imgSrc: ["orange-cat.svg", "oscar.svg", "angy-orangecat.svg", "oscar.svg"],
     score: 0,
     playerName: "",
-    escapedOscarsDisplay: $('#escapedOscars-display'),
 
     setup: () => {
         
@@ -27,7 +28,7 @@ const reactionGame = {
             if (reactionGame.playerName !== "") {
                 reactionGame.switchScreen("play-game");
             } else {
-                alert("Please input a name.");
+                reactionGame.message.text('Please input a name to proceed.');
             }
         });
 
@@ -111,7 +112,7 @@ const reactionGame = {
         if (reactionGame.nameInput.val().length > 0) {
             reactionGame.playerName = reactionGame.nameInput.val();
         } else {
-            alert('please input your name!');
+            reactionGame.message.text('Please input a name to proceed.');
         }
     },
     updatePlayerName: () => {
