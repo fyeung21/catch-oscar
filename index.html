@@ -16,19 +16,22 @@
     <body>
         <div class="site-wrapper">
             <section class="splash-screen" id="splash-screen">
-                <header>
                     <h1>Catch Oscar!</h1>
+                    <img src="./media/images/oscar.svg" alt="Image of Oscar">
                     <p>Oscar the grey cat ran away with your bag of treats! Catch him before he finds a place to hide them away forever. Only thing is, he ran
                     into a colony of cats minding their own business. You must only catch Oscar and not disturb the others. Can you keep up with Oscar? Good luck!</p>
-                </header>
-
-                <h2 class="player-name"></h2>
-                <p id="message"></p>
-                <input id="name-input" type="text" placeholder="Enter your name">
-                <input id="add-name" type="button" value="submit">
-
-                <input id="play-game" type="button" value="play game">
+                    
+                    <h2 class="player-name"></h2>
+                    
+                    <div class="name-input-container">
+                        <p id="message"></p>
+                        <input id="name-input" type="text" placeholder="Enter Your Name">
+                        <input id="add-name" type="button" value="Submit">
+                    </div>
+                    <input id="play-game" class="play-game" type="button" value="Play Game">
             </section>
+
+
             <section class="game-screen" id="game-screen">
 
                 <input id="start-game" type="button" value="start game">
@@ -69,7 +72,7 @@
             </section>
             <section class="win-screen" id="win-screen">
                 
-                <p>Congratulations <span class="player-name" id="player-name"></span>! 
+                <!-- <p>Congratulations <span class="player-name" id="player-name"></span>!  -->
                     Oscar got tired of running away, and you have successfully retrieved the treats!</p>
 
                 <p>Your final score:</p>
