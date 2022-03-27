@@ -102,9 +102,6 @@ const reactionGame = {
     updateScoreDisplay: () => {
         reactionGame.scoreDisplay.text(reactionGame.score);
     },
-    randomTime: (min, max) => {
-        Math.round(Math.random()*(max-min)+min);
-    },
     lastHole: $(),
     randomHole: () => {
         const index = Math.floor(Math.random()*reactionGame.hole.length);
