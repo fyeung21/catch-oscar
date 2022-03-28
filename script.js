@@ -18,7 +18,7 @@ const reactionGame = {
     message: $('#message'),
     hole: $('.hole'),
     cat: $('.cat'),
-    imgSrc: ["orange-cat.svg", "oscar.svg", "angy-orangecat.svg", "oscar.svg"],
+    imgSrc: ["orange-cat.png", "oscar.png", "calico-cat.png", "oscar.png"],
     score: 0,
     playerName: "",
 
@@ -134,7 +134,7 @@ const reactionGame = {
         const index = Math.floor(Math.random() * reactionGame.hole.length);
         const hole = reactionGame.hole[index];
 
-        if ($('[src$="oscar.svg"]').length) {
+        if ($('[src$="oscar.png"]').length) {
             reactionGame.escapedOscars++
             reactionGame.updateEscapedOscarsDisplay();
 
