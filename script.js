@@ -21,7 +21,6 @@ const reactionGame = {
     imgSrc: ["orange-cat.png", "oscar.png", "calico-cat.png", "oscar.png"],
     score: 0,
     playerName: "",
-
     setup: () => {
 
         reactionGame.playBtn.on('click', event => {
@@ -76,6 +75,7 @@ const reactionGame = {
         reactionGame.hole.on('click', event => {
 
             if ($(event.currentTarget).children().first().hasClass('oscar')) {
+                reactionGame.soundHit();
                 reactionGame.score++
                 reactionGame.updateScoreDisplay();
                 $('.cat').remove();
@@ -83,6 +83,7 @@ const reactionGame = {
 
             } else {
                 $('.cat').remove();
+                reactionGame.soundMiss();
 
                 if (reactionGame.score === 0) {
                     reactionGame.score
@@ -112,6 +113,14 @@ const reactionGame = {
             reactionGame.winScreen.hide();
             reactionGame.splashScreen.show();
         }
+    },
+    soundHit: () => {
+        const hitAudio = new Audio('./media/sounds/clean.mp3');
+        hitAudio.play();
+    },
+    soundMiss: () => {
+        const missAudio = new Audio('./media/sounds/angry.mp3');
+        missAudio.play();
     },
     addName: () => {
         if (reactionGame.nameInput.val().length > 0) {
