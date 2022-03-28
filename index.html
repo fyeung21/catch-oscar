@@ -15,6 +15,8 @@
     </head>
     <body>
         <div class="site-wrapper">
+
+            <!--- Splash screen --->
             <section class="splash-screen" id="splash-screen">
                     <h1>Catch Oscar!</h1>
                     <img src="./media/images/oscar.svg" alt="Image of Oscar">
@@ -31,7 +33,7 @@
                     <input id="play-game" class="play-game" type="button" value="Play Game">
             </section>
 
-
+            <!--- Game screen --->
             <section class="game-screen" id="game-screen">
 
                 <input id="start-game" type="button" value="start game">
@@ -61,6 +63,7 @@
                 </section>
             </section>
 
+            <!--- Gameover screen --->
             <section class="gameover-screen" id="gameover-screen">
 
                 <h1>Game Over</h1>
@@ -70,20 +73,21 @@
                 <section class="scoreboard-container">
                 <h2 class="player-name player-name-over" id="player-name"></h2>
                     <div class="player-display">
-                    <article>
-                        <h3>Your score:</h3>
-                        <h3 class="score" id="score">0</h3>
-                    </article>
-                    <article>
-                        <h3>Missed Oscars: </h3>
-                        <h3 id="escapedOscars-display">0</h3>
-                    </article>
+                        <article>
+                            <h3>Your score:</h3>
+                            <h3 class="score" id="score">0</h3>
+                        </article>
+                        <article>
+                            <h3>Missed Oscars: </h3>
+                            <h3 id="escapedOscars-display">0</h3>
+                        </article>
                     </div>
                 </section>
 
                 <input class="reset-game bottom-btn" id="reset-game" type="button" value="Play Again">
             </section>
 
+            <!--- Win screen --->
             <section class="win-screen" id="win-screen">
                 <h1>Success!</h1>
                 <p>Oscar got tired of running away, and the treats are safely in your possession!</p>
