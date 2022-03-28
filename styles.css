@@ -3,6 +3,7 @@
     --main-color: lightblue;
     --second-color: lightpink;
     --splash-screen-color: lightskyblue;
+    --gameover-screen-color: lightskyblue;
     --error-color: red;
 
     --font-family-body: "Comic Neue", Helvetica, Arial, san-serif;
@@ -23,6 +24,13 @@ body {
 
 h1 {
     margin: 0;
+    font-size: 3rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 2.5rem;
 }
 
 input {
@@ -32,6 +40,7 @@ input {
     font-size: 1.2rem;
     text-align: center;
     background-color: white;
+    font-weight: 700;
 }
 
 .site-wrapper {
@@ -107,27 +116,57 @@ input {
 }
 
 
-
-
-main {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-
 .game-screen {
     display: none;
 }
 .gameover-screen {
-    display: none;
-    background-color: lightseagreen;
-    height: 400px;
+    /* display: none; */
+    background-color: var(--gameover-screen-color);
+    height: 680px;
+    margin: 1.8rem auto;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    position: relative;
+}
+.gameover-screen p {
+    margin: 2rem 0;
+}
+.gameover-oscar {
+    position: absolute;
+    width: 8rem;
+    top: 4rem;
+    right: 5rem;
+}
+.bottom-btn {
+    width: 30rem;
+    margin: 2rem auto;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+}
+.player-display {
+    width: 20rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.player-display article {
+    text-align: center;
 }
 
-h2 {
-    font-size: 2rem;
+.player-name-over {
+    text-align: center;
+    margin: 2rem;
+    font-size: 2.5rem;
+}
+
+.scoreboard-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 17rem;
 }
 
 .pause-game {
