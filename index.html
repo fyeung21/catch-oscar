@@ -19,7 +19,7 @@
             <!--- Splash screen --->
             <section class="splash-screen" id="splash-screen">
                     <h1>Catch Oscar!</h1>
-                    <img src="./media/images/oscar.svg" alt="Image of Oscar">
+                    <img src="./media/images/oscar-display.svg" alt="Image of Oscar">
                     <p>Oscar the grey cat ran away with your bag of treats! Catch him before he finds a place to hide them away forever. Only thing is, he ran
                     into a colony of cats minding their own business. You must only catch Oscar and not disturb the others. Can you keep up with Oscar? Good luck!</p>
                     
@@ -35,17 +35,24 @@
 
             <!--- Game screen --->
             <section class="game-screen" id="game-screen">
-
-                <input id="start-game" type="button" value="start game">
-                <input class="pause-game" id="pause-game" type="button" value="pause game">
-                <input class="reset-game" id="reset-game" type="button" value="reset game">
-                
-                <div class="player-display">
-                    <h2 class="player-name"></h2>
-                    <h2 class="score" id="score">0</h2>
-                </div>
-                <div>
-                    <h2>Missed Oscar <span id="escapedOscars-display">0</span> times</h2>
+                <h1>Objective:</h1>
+                <p>Score points by catching Oscar multiple times. Lose points when you catch a cat thats not Oscar. Game is over when you miss more than 3 opportunities to catch Oscar or when Oscar gets tired. Oscar will eventually get tired right...?</p>
+                <div class="game-header">
+                    <section>
+                        <input id="start-game" type="button" value="Start Game">
+                        <input class="pause-game" id="pause-game" type="button" value="Pause Game">
+                        <input class="reset-game" id="reset-game" type="button" value="Reset Game">
+                    </section>
+                    <section>
+                        <article>
+                            <h4><span class="player-name"></span>'s score</h4>
+                            <h4 class="score" id="score">0</h4>
+                        </article>
+                        <article>
+                            <h4>Missed Oscars: </h4>
+                            <h4 id="escapedOscars-display">0</h4>
+                        </article>
+                    </section>
                 </div>
 
                 <section id="game-container" class="game-container">
@@ -68,7 +75,7 @@
 
                 <h1>Game Over</h1>
                 <p>Oh no, Oscar escaped! :(</p>
-                <img class="gameover-oscar" src="./media/images/oscar.svg" alt="Image of Oscar"/>
+                <img class="gameover-oscar" src="./media/images/oscar-display.svg" alt="Image of Oscar"/>
 
                 <section class="scoreboard-container">
                 <h2 class="player-name player-name-over" id="player-name"></h2>
@@ -91,7 +98,7 @@
             <section class="win-screen" id="win-screen">
                 <h1>Success!</h1>
                 <p>Oscar got tired of running away, and the treats are safely in your possession!</p>
-                <img class="gameover-oscar" src="./media/images/oscar.svg" alt="Image of Oscar"/>
+                <img class="gameover-oscar" src="./media/images/oscar-display.svg" alt="Image of Oscar"/>
                 
                 <section class="scoreboard-container">
                 <h2 class="player-name player-name-over" id="player-name"></h2>

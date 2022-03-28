@@ -6,6 +6,7 @@
     --gameover-screen-color: lightskyblue;
     --win-screen-color: lightskyblue;
     --error-color: red;
+    --hole-color: beige;
 
     --font-family-body: "Comic Neue", Helvetica, Arial, san-serif;
     --font-size-body: 1.2rem;
@@ -27,11 +28,15 @@ h1 {
     margin: 0;
     font-size: 3rem;
 }
+h2 {
+    font-size: 2.5rem;
+}
 h3 {
     font-size: 1.5rem;
 }
-h2 {
-    font-size: 2.5rem;
+h4 {
+    font-size: 1.3rem;
+    margin: 0 0.5rem;
 }
 
 input {
@@ -94,37 +99,56 @@ input {
 }
 
 
+.game-screen {
+    display: none;
+    background-color: var(--win-screen-color);
+    margin: 1.8rem auto 0;
+    padding: 3rem 2rem 0;
+    border-radius: 20px;
+    position: relative;
+}
 .game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+}
+.game-header {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem auto 0;
+}
+.game-header section {
+    display: flex;
+    flex-direction: row;
+}
+.game-header section article {
+    display: flex;
+    flex-direction: row;
+}
+.game-header section .reset-game {
+    margin-left: 1rem;
 }
 .pause-game {
     display: none;
 }
-
 .hole {
-    background-color: lightgrey;
-    width: 12rem;
-    height: 12rem;
+    background-color: var(--hole-color);
+    width: 11rem;
+    height: 11rem;
     border-radius: 50%;
-    margin: 2rem;
+    margin: 2.5rem auto;
 }
-
 .cat {
     width: 10rem;
-    margin: 1rem;
-}
-
-.screen-container {
-    height: 100vh;
+    margin: 0.5rem;
 }
 
 
-.game-screen {
-    display: none;
-}
+
 .gameover-screen {
-    /* display: none; */
+    display: none;
     background-color: var(--gameover-screen-color);
     height: 680px;
     margin: 1.8rem auto;

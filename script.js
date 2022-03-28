@@ -60,6 +60,8 @@ const reactionGame = {
             reactionGame.escapedOscars = 0;
             reactionGame.timeoutId = null;
             reactionGame.scoreDisplay = 0;
+            reactionGame.updateScoreDisplay();
+            reactionGame.updateEscapedOscarsDisplay();
         });
 
         reactionGame.addNameBtn.on('click', event => {
