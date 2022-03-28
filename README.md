@@ -1,2 +1,2 @@
 # catch-oscar
-Oscar, come back here! is a JS reaction game using jQuery, html, and css
+Catch Oscar is a JS whac a mole reaction game using jQuery, html, and css.
