@@ -1,22 +1,21 @@
 :root {
 
-    --main-color: lightblue;
-    --second-color: lightpink;
-    --splash-screen-color: lightskyblue;
-    --gameover-screen-color: lightskyblue;
-    --win-screen-color: lightskyblue;
+    --main-background-color: #AAAAAA;
+    --splash-screen-color: #A2D2FF;
+    --gameover-screen-color: #A2D2FF;
+    --game-screen-color: #A2D2FF;
+    --win-screen-color: #A2D2FF;
     --error-color: red;
-    --hole-color: beige;
+    --hole-color: #F3E9DD;
+    --hover-background-color: #ffdb99;
+    --hover-font-color: #000;
 
     --font-family-body: "Comic Neue", Helvetica, Arial, san-serif;
     --font-size-body: 1.2rem;
-    --font-size-heading: 2.5rem;
-
-
 }
 
 body {
-    background-color: beige;
+    background-color: var(--main-background-color);
     margin: 0 auto;
     font-family: var(--font-family-body);
     font-size: var(--font-size-body);
@@ -47,6 +46,11 @@ input {
     text-align: center;
     background-color: white;
     font-weight: 700;
+}
+
+input:hover {
+    background-color: var(--hover-background-color);
+    color: var(--hover-font-color);
 }
 
 .site-wrapper {
@@ -100,8 +104,8 @@ input {
 
 
 .game-screen {
-    display: none;
-    background-color: var(--win-screen-color);
+    /* display: none; */
+    background-color: var(--game-screen-color);
     margin: 1.8rem auto 0;
     padding: 3rem 2rem 0;
     border-radius: 20px;
@@ -148,7 +152,7 @@ input {
 
 
 .gameover-screen {
-    display: none;
+    /* display: none; */
     background-color: var(--gameover-screen-color);
     height: 680px;
     margin: 1.8rem auto;
@@ -198,6 +202,7 @@ input {
 }
 
 .win-screen {
+    /* display: none; */
     background-color: var(--win-screen-color);
     height: 680px;
     margin: 1.8rem auto;
