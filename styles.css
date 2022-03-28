@@ -165,9 +165,9 @@ input:hover {
 }
 .gameover-oscar {
     position: absolute;
-    width: 8rem;
-    top: 4rem;
-    right: 5rem;
+    width: 17rem;
+    top: 2rem;
+    right: 3rem;
 }
 .bottom-btn {
     width: 30rem;
@@ -209,6 +209,9 @@ input:hover {
     padding: 3rem 2rem;
     border-radius: 20px;
     position: relative;
+}
+.win-screen p {
+    margin: 3rem 0;
 }
 
 footer {
