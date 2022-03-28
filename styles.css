@@ -108,7 +108,7 @@ input:hover {
     background-color: var(--game-screen-color);
     margin: 1.8rem auto 0;
     padding: 3rem 2rem 0;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     position: relative;
 }
 .game-container {
@@ -209,4 +209,13 @@ input:hover {
     padding: 3rem 2rem;
     border-radius: 20px;
     position: relative;
+}
+
+footer {
+    position: relative;
+}
+cite {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
 }
