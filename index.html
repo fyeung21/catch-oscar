@@ -83,16 +83,27 @@
 
                 <input class="reset-game bottom-btn" id="reset-game" type="button" value="Play Again">
             </section>
+
             <section class="win-screen" id="win-screen">
+                <h1>Success!</h1>
+                <p>Oscar got tired of running away, and the treats are safely in your possession!</p>
+                <img class="gameover-oscar" src="./media/images/oscar.svg" alt="Image of Oscar"/>
                 
-                <!-- <p>Congratulations <span class="player-name" id="player-name"></span>!  -->
-                    Oscar got tired of running away, and you have successfully retrieved the treats!</p>
+                <section class="scoreboard-container">
+                <h2 class="player-name player-name-over" id="player-name"></h2>
+                    <div class="player-display">
+                        <article>
+                            <h3>Your score:</h3>
+                            <h3 class="score" id="score">0</h3>
+                        </article>
+                        <article>
+                            <h3>Missed Oscars: </h3>
+                            <h3 id="escapedOscars-display">0</h3>
+                        </article>
+                    </div>
+                </section>
 
-                <p>Your final score:</p>
-                <h2 class="score" id="score">0</h2>
-
-
-                <input class="reset-game" id="reset-game" type="button" value="play again">
+                <input class="reset-game bottom-btn" id="reset-game" type="button" value="Play Again">
             </section>
         </div>
 
