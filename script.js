@@ -10,7 +10,7 @@ const reactionGame = {
     addNameBtn: $('#add-name'),
     playerNameDisplay: $('.player-name'),
     scoreDisplay: $('.score'),
-    escapedOscarsDisplay: $('#escapedOscars-display'),
+    escapedOscarsDisplay: $('.escapedOscars-display'),
     playBtn: $('#play-game'),
     startBtn: $('#start-game'),
     pauseBtn: $('#pause-game'),
@@ -58,7 +58,6 @@ const reactionGame = {
             reactionGame.round = 0;
             reactionGame.escapedOscars = 0;
             reactionGame.timeoutId = null;
-            reactionGame.scoreDisplay = 0;
             reactionGame.updateScoreDisplay();
             reactionGame.updateEscapedOscarsDisplay();
         });

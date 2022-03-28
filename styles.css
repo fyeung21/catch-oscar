@@ -68,12 +68,10 @@ input:hover {
     display: flex;
     flex-direction: column;
 }
-
 .splash-screen img {
     width: 10rem;
     margin: 2rem auto;
 }
-
 .name-input-container {
     position: absolute;
     bottom: 10rem;
@@ -83,7 +81,6 @@ input:hover {
     text-align: center;
     color: var(--error-color);
 }
-
 .player-name-splash {
     font-size: 2.5rem;
     text-align: center;
@@ -92,7 +89,6 @@ input:hover {
     left: 0;
     right: 0;
 }
-
 .play-game {
     width: 30rem;
     margin: 2rem auto;
@@ -104,7 +100,7 @@ input:hover {
 
 
 .game-screen {
-    /* display: none; */
+    display: none;
     background-color: var(--game-screen-color);
     margin: 1.8rem auto 0;
     padding: 3rem 2rem 0;
@@ -150,9 +146,8 @@ input:hover {
 }
 
 
-
 .gameover-screen {
-    /* display: none; */
+    display: none;
     background-color: var(--gameover-screen-color);
     height: 680px;
     margin: 1.8rem auto;
@@ -202,7 +197,7 @@ input:hover {
 }
 
 .win-screen {
-    /* display: none; */
+    display: none;
     background-color: var(--win-screen-color);
     height: 680px;
     margin: 1.8rem auto;
